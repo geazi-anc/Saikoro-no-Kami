@@ -23,7 +23,7 @@ def convert(rolled_dice):
     dicepool = {}
 
     try:
-        rolled_dice = [int(face) for face in rolled_dice.split(" ")]
+        rolled_dice = [int(face) for face in rolled_dice]
 
         dicepool["d6"] = rolled_dice[0]
         dicepool["d12"] = rolled_dice[1]
@@ -50,3 +50,14 @@ def dice_roller(dicepool):
             results[key].append(dice[face][key])
 
     return results
+
+
+def format(dicepool):
+    converted = [[f"[{dice}]" for dice in value] for key, value in dicepool.items()]
+
+    dicepool = {
+        "ring": ", ".join(converted[0]),
+        "skill": ", ".join(converted[1])
+    }
+
+    return dicepool
