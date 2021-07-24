@@ -19,32 +19,25 @@ dice = {
 
 
 ### FUNCTIONS ###
-def convert(rolled_dice):
-    dicepool = {}
+def convert(**kwargs):
 
     try:
-        rolled_dice = [int(face) for face in rolled_dice]
-
-        dicepool["d6"] = rolled_dice[0]
-        dicepool["d12"] = rolled_dice[1]
+        [kwargs.update({key: int(value)}) for key, value in kwargs.items()]
 
     except ValueError:
         print("Um dos argumentos não é válido")
 
-    except IndexError:
-        print("É necessário dois argumentos.")
-
     else:
-        return dicepool
+        return kwargs
 
 
-def dice_roller(dicepool):
+def dice_roller(**kwargs):
     results = {
         "d6": [],
         "d12": []
     }
 
-    for key, value in dicepool.items():
+    for key, value in kwargs.items():
         for i in range(1, value+1):
             face = randrange(1, 7) if key == "d6" else randrange(1, 13)
             results[key].append(dice[face][key])
@@ -52,12 +45,9 @@ def dice_roller(dicepool):
     return results
 
 
-def format(dicepool):
-    converted = [[f"[{dice}]" for dice in value] for key, value in dicepool.items()]
-
-    dicepool = {
-        "ring": ", ".join(converted[0]),
-        "skill": ", ".join(converted[1])
-    }
-
-    return dicepool
+def format(**kwargs):
+    [kwargs.update({key: [f"[{face}]" for face in value]})
+     for key, value in kwargs.items()]
+    [kwargs.update({key: ", ".join(value)}) for key, value in kwargs.items()]
+    
+    return kwargs
