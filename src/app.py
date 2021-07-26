@@ -6,8 +6,10 @@ from discord.ext import commands
 
 ### VARIABLES ###
 
-# get discord token from .env file
+# load enviroment variables from .env file
 load_dotenv()
+
+# get discord token from enviroment system
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 # set discord client with commands prefix
@@ -17,7 +19,7 @@ client = commands.Bot(command_prefix='.')
 ### FUNNCTIONS ###
 @client.event
 async def on_ready():
-    print(f"\a\tConectado como {client.user.name}")
+    print(f"\a*We are already online, connected as {client.user.name}!*")
 
 
 @client.command()
@@ -63,12 +65,3 @@ async def skill_roll(ctx, skill):
 
 # connect
 client.run(DISCORD_TOKEN)
-# ring="2"
-# skill="3"
-
-#converted = customdice.convert(ring=ring)
-#dicepool = customdice.dice_roller(d6=converted["ring"])
-
-#result = customdice.format(ring=dicepool["d6"])
-#result = f"Ring Dice: {result['ring']}\nSkill Dice: {result['skill']}"
-#print(result)
