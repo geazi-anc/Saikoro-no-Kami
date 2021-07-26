@@ -60,4 +60,4 @@ A sseguir está a tabela com os emojis e seus significados:
 - `.help [command]`: exibe o uso completo de um comando.  
 Exemplo: `.help d`.
 
-Para obter mais detalhes sobre esses comandos, assim como a tabela de significado dos emojis exibidos nos resultados, visite a documentação completa [aqui]().
+Para obter mais detalhes sobre esses comandos, assim como a tabela de significado dos emojis exibidos nos resultados, visite a documentação completa [aqui](https://github.com/geazi-anc/Saikoro-no-Kami/wiki/Refer%C3%AAncia-de-comandos).
