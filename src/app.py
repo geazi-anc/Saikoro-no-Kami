@@ -55,7 +55,7 @@ async def skill_roll(ctx, skill):
 
 @client.command(name="t", help="Show table of emojis meanings.")
 async def table(ctx):
-    table = "👏 > Success;\n🎆 > Explosive Success;\n😫 > Strife;\n🤔 > Opportunity;\n◻ > Blank Face;"
+    table = "⭕ > Success;\n🌟 > Explosive Success;\n🔥 > Strife;\n🌸 > Opportunity;\n◻ > Blank Face;"
 
     await ctx.send(table)
 
